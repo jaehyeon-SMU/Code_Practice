@@ -1,0 +1,43 @@
+백준 2884번 
+내 풀이
+#include <stdio.h>
+int main(){
+    int H, M;
+    scanf("%d %d",&H,&M);
+    
+    if(M>=45)
+        printf("%d %d",H,M-45);
+    else if(H==0 && M<45)
+        printf("%d %d",23,M-45+60);
+    else
+        printf("%d %d",H-1,M-45+60);
+    return 0;
+}
+
+더깔끔하다고 생각되는 풀이
+#include <stdio.h>
+
+int main()
+{
+    int h,m;
+    scanf("%d%d",&h,&m);
+    if(m>=45)
+    {m-=45;
+    }
+    else 
+    {
+       if(h>0)
+       {
+           h-=1;
+           m+=15;
+       }else 
+       {
+           h=23;
+           m+=15;
+       }
+    }
+    printf("%d\n%d",h,m);
+
+--> printf를 계속해서 쓰는것보단 마지막줄에 써주고 그 위에 메인함수에는 분류를 하는게 더 나아보인다. 또한 조건에 대해서도 계속해서 생각해보자 코드를 더 간단하게 만들수있도록
+    
+}
